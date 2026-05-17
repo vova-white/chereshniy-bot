@@ -27,11 +27,9 @@ fun Application.configureHttp() {
     }
     install(ForwardedHeaders)
     install(XForwardedHeaders)
-    if (environment.config.propertyOrNull("http.forceHttps")?.getString()?.toBooleanStrictOrNull() == true) {
-        install(HttpsRedirect) {
-            sslPort = 443
-            permanentRedirect = true
-        }
+    install(HttpsRedirect) {
+        sslPort = 443
+        permanentRedirect = true
     }
 }
 

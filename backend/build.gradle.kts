@@ -16,7 +16,6 @@ kotlin {
 }
 dependencies {
     implementation(ktorLibs.client.apache)
-    implementation(ktorLibs.client.contentNegotiation)
     implementation(ktorLibs.client.core)
     implementation(ktorLibs.serialization.kotlinx.json)
     implementation(ktorLibs.server.auth)

@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const count1 = ref(0)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <h1>You did it!</h1>

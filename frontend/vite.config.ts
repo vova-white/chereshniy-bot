@@ -6,6 +6,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  staged: {
+    '*': 'vp check --fix',
+  },
   fmt: {
     semi: false,
     singleQuote: true,

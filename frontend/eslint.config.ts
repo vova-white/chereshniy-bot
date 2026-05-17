@@ -32,7 +32,15 @@ export default defineConfigWithVueTs(
     files: ['src/**/__tests__/*'],
   },
 
-  ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
+  {
+    name: 'app/shadcn-vue-components',
+    files: ['src/shared/components/ui/**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
+
+  ...pluginOxlint.configs['flat/recommended'],
 
   skipFormatting,
 )

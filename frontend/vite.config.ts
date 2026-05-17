@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   staged: {
-    '*': 'vp check --fix',
+    '*': 'vp check --fix && pnpm lint',
   },
   fmt: {
     semi: false,

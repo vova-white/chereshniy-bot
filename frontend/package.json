@@ -13,7 +13,7 @@
     "type-check": "vue-tsc --build",
     "lint": "run-s lint:*",
     "lint:oxlint": "vp lint . --fix",
-    "lint:eslint": "vp lint . --fix",
+    "lint:eslint": "eslint . --fix --cache",
     "format": "vp fmt src/"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/test-utils": "^2.4.10",
     "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "~1.60.0",
     "eslint-plugin-playwright": "^2.10.2",

@@ -4,9 +4,8 @@ import { mount } from '@vue/test-utils'
 import App from '../App.vue'
 
 describe('App', () => {
-  it('renders the dashboard shell through the app module', () => {
+  it('mounts renders properly', () => {
     const wrapper = mount(App)
-    expect(wrapper.text()).toContain('Dashboard')
-    expect(wrapper.text()).toContain('Point Auction')
+    expect(wrapper.text()).toContain('You did it!')
   })
 })

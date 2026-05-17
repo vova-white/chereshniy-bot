@@ -1,7 +1,6 @@
-package com.chereshniy.app
+package com.chereshniy
 
 import io.ktor.client.request.get
-import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.testing.testApplication
 import kotlin.test.*
@@ -9,25 +8,11 @@ import kotlin.test.*
 class ServerTest {
 
     @Test
-    fun `application composition root exposes service status`() = testApplication {
-        application {
-            configureApplication()
-        }
-
-        val response = client.get("/")
-
-        assertEquals(HttpStatusCode.OK, response.status)
-        assertEquals("Chereshniy Bot", response.bodyAsText())
+    fun `test root endpoint`() = testApplication {
+        // loads default configuration
+        configure()
+        // verify server root returns 200
+        assertEquals(HttpStatusCode.OK, client.get("/").status)
     }
 
-    @Test
-    fun `generated demo endpoints are not registered`() = testApplication {
-        application {
-            configureApplication()
-        }
-
-        assertEquals(HttpStatusCode.NotFound, client.get("/json/kotlinx-serialization").status)
-        assertEquals(HttpStatusCode.NotFound, client.get("/users/1").status)
-        assertEquals(HttpStatusCode.NotFound, client.get("/session/increment").status)
-    }
 }

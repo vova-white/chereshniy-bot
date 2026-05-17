@@ -14,7 +14,7 @@
   "rtl": false,
   "pointer": false,
   "aliases": {
-    "components": "@/shared/ui",
+    "components": "@/shared",
     "utils": "@/shared/lib/utils",
     "ui": "@/shared/ui",
     "lib": "@/shared/lib",

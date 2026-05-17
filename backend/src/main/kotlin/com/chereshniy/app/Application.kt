@@ -1,8 +1,11 @@
 package com.chereshniy.app
 
+import com.chereshniy.identity.application.IdentityModule
 import io.ktor.server.application.Application
 
-fun Application.configureApplication() {
+fun Application.configureApplication(
+    identityModule: IdentityModule = IdentityModule.fromEnvironment(environment.config),
+) {
     configureHttp()
     configureMonitoring()
     configureSerialization()
@@ -14,7 +17,7 @@ fun Application.configureApplication() {
     configurePersistence()
     configureRateLimiting()
     configureJobs()
-    configureRouting()
+    configureRouting(identityModule)
 }
 
 fun Application.configureJobs() {

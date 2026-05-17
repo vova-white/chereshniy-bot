@@ -131,8 +131,13 @@ body {
 }
 
 .app-shell {
+  display: grid;
+  align-items: start;
   min-height: 100vh;
-  background: #f8faf7;
+  background:
+    linear-gradient(90deg, rgb(18 84 74 / 5%) 1px, transparent 1px),
+    linear-gradient(180deg, rgb(18 84 74 / 5%) 1px, transparent 1px), #f7f7f0;
+  background-size: 28px 28px;
   color: #17201b;
 }
 
@@ -143,6 +148,10 @@ body {
 }
 
 .dashboard-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
   margin-bottom: 24px;
 }
 
@@ -173,26 +182,105 @@ h2 {
 }
 
 .module-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   gap: 16px;
-  max-width: 440px;
+  max-width: 620px;
   padding: 18px;
-  border: 1px solid #d8e0d9;
+  border: 1px solid #d7ddd5;
   border-radius: 8px;
-  background: #ffffff;
+  background: rgb(255 255 255 / 92%);
   box-shadow: 0 1px 2px rgb(23 32 27 / 6%);
 }
 
-.module-card p:last-child {
-  margin-bottom: 0;
+.module-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.module-card__heading svg {
+  flex: 0 0 auto;
   color: #2f6f4f;
+}
+
+.summary-grid {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.summary-grid div {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e1e6df;
+  border-radius: 6px;
+  background: #fbfcf8;
+}
+
+.summary-grid dt {
+  margin-bottom: 4px;
+  color: #5f6f66;
+  font-size: 0.78rem;
   font-weight: 700;
+}
+
+.summary-grid dd {
+  margin: 0;
+  margin-bottom: 0;
+  color: #1f4332;
+  font-weight: 700;
+}
+
+.auth-panel {
+  width: min(100% - 32px, 420px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.primary-action,
+.icon-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  border: 1px solid #173b30;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primary-action {
+  margin-top: 18px;
+  padding: 0 16px;
+  background: #173b30;
+  color: #fffdf5;
+}
+
+.icon-action {
+  padding: 0 12px;
+  background: #fffdf5;
+  color: #173b30;
+  cursor: pointer;
+}
+
+.error-text,
+.shell-error {
+  color: #9f1239;
+  font-weight: 700;
+}
+
+.shell-error {
+  width: min(100% - 32px, 960px);
+  margin: -24px auto 32px;
 }
 
 @media (min-width: 640px) {
   h1 {
     font-size: 3rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

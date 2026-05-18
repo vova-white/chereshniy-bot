@@ -5,9 +5,9 @@ How the engineering skills should consume this repo's domain documentation when 
 ## Before exploring, read these
 
 - **`CONTEXT-MAP.md`** at the repo root if it exists -- it points at one `CONTEXT.md` per context. Read each one relevant to the topic.
-- **`CONTEXT.md`** files in context roots such as `backend/CONTEXT.md` and `frontend/CONTEXT.md` when they exist.
+- **`CONTEXT.md`** files in context roots such as `backend/CONTEXT.md`, `backend/src/main/kotlin/identityaccess/CONTEXT.md`, and `backend/src/main/kotlin/pointauction/CONTEXT.md` when they exist.
 - **`docs/adr/`** -- read system-wide ADRs that touch the area you're about to work in.
-- **Context-scoped ADRs** such as `backend/docs/adr/` and `frontend/docs/adr/` when they exist.
+- **Context-scoped ADRs** such as `backend/docs/adr/`, `backend/src/main/kotlin/identityaccess/docs/adr/`, and `backend/src/main/kotlin/pointauction/docs/adr/` when they exist.
 
 If any of these files don't exist, **proceed silently**. Don't flag their absence; don't suggest creating them upfront. The producer skill (`/grill-with-docs`) creates them lazily when terms or decisions actually get resolved.
 
@@ -21,10 +21,14 @@ This repo is configured as a multi-context repo:
 |-- docs/adr/                          # system-wide decisions
 |-- backend/
 |   |-- CONTEXT.md
-|   `-- docs/adr/                      # backend-specific decisions
-`-- frontend/
-    |-- CONTEXT.md
-    `-- docs/adr/                      # frontend-specific decisions
+|   |-- docs/adr/                      # backend-wide decisions
+|   `-- src/main/kotlin/
+|       |-- identityaccess/
+|       |   |-- CONTEXT.md
+|       |   `-- docs/adr/              # Identity & Access decisions
+|       `-- pointauction/
+|           |-- CONTEXT.md
+|           `-- docs/adr/              # Point Auction decisions
 ```
 
 ## Use the glossary's vocabulary
